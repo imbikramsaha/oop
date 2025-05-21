@@ -1,0 +1,204 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 256px;
+    background-color: #f8f9fa;
+    border-right: 1px solid #e9ecef;
+    padding-bottom: 0.1rem;
+    padding-top: 0.6rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    height: 100vh;
+    position: fixed;
+    overflow-y: auto;
+    transition: transform 0.3s ease;
+}
+
+.sidebar-header {
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.sidebar-header h1 {
+    font-size: 1.5rem;
+    color: #212529;
+}
+
+.nav-list {
+    list-style: none;
+}
+
+.nav-item {
+    margin-bottom: 0.5rem;
+}
+
+.nav-link {
+    display: block;
+    padding: 0.5rem 0;
+    color: #495057;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.nav-link:hover {
+    color: #228be6;
+}
+
+.nav-link.active {
+    color: #228be6;
+    font-weight: 600;
+}
+
+/* Content Styles */
+.content {
+    flex: 1;
+    padding: 2rem;
+    margin-left: 250px;
+}
+
+.content-section {
+    max-width: 800px;
+    margin-bottom: 3rem;
+}
+
+.content-section h2 {
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e9ecef;
+    color: #228be6;
+}
+
+.content-section p {
+    margin-bottom: 1rem;
+}
+
+.content-section ul {
+    margin-left: 2rem;
+}
+
+.content-section ol {
+    margin-left: 2rem;
+}
+
+.content-section code {
+    background-color: #f8f9fa;
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    font-size: 0.9em;
+}
+
+.content-section pre {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 5px;
+    overflow-x: auto;
+    margin: 1rem 0;
+}
+
+/* Mobile Hamburger Menu */
+.menu-toggle {
+    display: none;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 999;
+    background-color: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    padding: 0.5rem;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.hamburger {
+    width: 20px;
+    height: 16px;
+    position: relative;
+    transform: rotate(0deg);
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: #333;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: 0.25s ease-in-out;
+}
+
+.hamburger span:nth-child(1) {
+    top: 0px;
+}
+
+.hamburger span:nth-child(2), .hamburger span:nth-child(3) {
+    top: 7px;
+}
+
+.hamburger span:nth-child(4) {
+    top: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    
+    .sidebar {
+        transform: translateX(-250px);
+        z-index: 998;
+    }
+    
+    .sidebar.active {
+        transform: translateX(0);
+        box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    }
+    
+    .content {
+        margin-left: 0;
+        padding-top: 4rem;
+    }
+    
+    /* Hamburger animation */
+    .menu-toggle.active .hamburger span:nth-child(1) {
+        top: 7px;
+        width: 0%;
+        left: 50%;
+    }
+    
+    .menu-toggle.active .hamburger span:nth-child(2) {
+        transform: rotate(45deg);
+    }
+    
+    .menu-toggle.active .hamburger span:nth-child(3) {
+        transform: rotate(-45deg);
+    }
+    
+    .menu-toggle.active .hamburger span:nth-child(4) {
+        top: 7px;
+        width: 0%;
+        left: 50%;
+    }
+}

@@ -1,0 +1,1910 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object-Oriented Programming (OOP)</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <style></style>
+  </head>
+  <body>
+    <!-- Mobile Hamburger Menu -->
+    <div class="menu-toggle" id="menu-toggle">
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h1>Documentation</h1>
+      </div>
+      <nav>
+        <ul class="nav-list" id="nav-list">
+          <!-- Navigation items will be generated automatically from h2 tags -->
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content">
+      <section id="getting-started" class="content-section">
+        <h2>Object-Oriented Programming (OOP)</h2>
+        <p>
+          A detailed and exhaustive list of Object-Oriented Programming (OOP)
+          interview questions, covering everything from fundamental concepts to
+          advanced design patterns and real-world applications. This is suitable
+          for freshers and experienced developers alike, especially for roles
+          involving Java, Python, C++, or other OOP-supporting languages.
+        </p>
+      </section>
+
+      <section id="oop-concepts" class="content-section">
+        <h2>Core OOP Concepts</h2>
+        <h3>1. What is Object-Oriented Programming (OOP)?</h3>
+        <p>
+          Object-Oriented Programming is a programming paradigm based on the
+          concept of "objects," which contain data (attributes) and methods
+          (functions) that operate on the data. It aims to structure software in
+          a way that is modular, reusable, and easy to maintain.
+        </p>
+
+        <h3>2. What are the benefits of using OOP?</h3>
+        <ul>
+          <li><strong>Modularity:</strong> Code is organized into objects.</li>
+          <li>
+            <strong>Reusability:</strong> Classes and objects can be reused
+            across applications.
+          </li>
+          <li>
+            <strong>Scalability:</strong> Easy to expand or modify without
+            affecting other parts.
+          </li>
+          <li>
+            <strong>Maintainability:</strong> Clean and understandable code
+            structure.
+          </li>
+          <li>
+            <strong>Abstraction:</strong> Hide internal implementation details.
+          </li>
+          <li>
+            <strong>Encapsulation:</strong> Protect data from unauthorized
+            access.
+          </li>
+        </ul>
+
+        <h3>3. Compare OOP with procedural programming.</h3>
+        <table style="width: 100%; border-collapse: collapse; margin: 1rem 0">
+          <tr
+            style="background-color: #f8f9fa; border-bottom: 1px solid #e9ecef"
+          >
+            <th style="text-align: left; padding: 0.75rem">Feature</th>
+            <th style="text-align: left; padding: 0.75rem">OOP</th>
+            <th style="text-align: left; padding: 0.75rem">
+              Procedural Programming
+            </th>
+          </tr>
+          <tr style="border-bottom: 1px solid #e9ecef">
+            <td style="padding: 0.75rem">Focus</td>
+            <td style="padding: 0.75rem">Objects and data</td>
+            <td style="padding: 0.75rem">Functions and procedures</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #e9ecef">
+            <td style="padding: 0.75rem">Data Handling</td>
+            <td style="padding: 0.75rem">Encapsulated within objects</td>
+            <td style="padding: 0.75rem">Shared across functions</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #e9ecef">
+            <td style="padding: 0.75rem">Code Reuse</td>
+            <td style="padding: 0.75rem">High via inheritance and classes</td>
+            <td style="padding: 0.75rem">Low</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #e9ecef">
+            <td style="padding: 0.75rem">Real-world Mapping</td>
+            <td style="padding: 0.75rem">Easy</td>
+            <td style="padding: 0.75rem">Harder</td>
+          </tr>
+        </table>
+
+        <h3>4. List the main principles of OOP.</h3>
+        <ul>
+          <li><strong>Encapsulation</strong></li>
+          <li><strong>Abstraction</strong></li>
+          <li><strong>Inheritance</strong></li>
+          <li><strong>Polymorphism</strong></li>
+        </ul>
+
+        <h3>5. What is a class? How is it different from an object?</h3>
+        <p>
+          A <strong>class</strong> is a blueprint or template for creating
+          objects. An <strong>object</strong> is an instance of a class,
+          containing real values for the attributes defined in the class.
+        </p>
+        <pre><code>class Car {
+        String color;
+        void drive() { System.out.println("Driving..."); }
+    }
+    
+    Car myCar = new Car(); // Object</code></pre>
+
+        <h3>6. How do you create a class and object in Java/Python/C++?</h3>
+        <p><strong>Java:</strong></p>
+        <pre><code>class Person {
+        String name;
+    }
+    Person p = new Person();</code></pre>
+
+        <p><strong>Python:</strong></p>
+        <pre><code>class Person:
+        def __init__(self, name):
+            self.name = name
+    
+    p = Person("Alice")</code></pre>
+
+        <p><strong>C++:</strong></p>
+        <pre><code>class Person {
+    public:
+        string name;
+    };
+    Person p;</code></pre>
+
+        <h3>7. Can we create a class without any data members?</h3>
+        <p>
+          Yes, a class can contain only methods or even be empty. This is useful
+          for grouping behaviors or providing utility functions.
+        </p>
+
+        <h3>8. What is an instance?</h3>
+        <p>
+          An <strong>instance</strong> is a concrete occurrence of any object
+          created from a class. For example, <code>myCar</code> is an instance
+          of the class <code>Car</code>.
+        </p>
+
+        <h3>9. What is the lifecycle of an object?</h3>
+        <ol>
+          <li>
+            <strong>Instantiation:</strong> Object is created using a class.
+          </li>
+          <li>
+            <strong>Initialization:</strong> Constructor initializes the object.
+          </li>
+          <li>
+            <strong>Use:</strong> Object performs actions through its methods.
+          </li>
+          <li>
+            <strong>Destruction:</strong> Memory is released (garbage collection
+            or destructors).
+          </li>
+        </ol>
+
+        <h3>10. What are instance vs class (static) variables?</h3>
+        <ul>
+          <li>
+            <strong>Instance variable:</strong> Tied to each object; each
+            instance has its own copy.
+          </li>
+          <li>
+            <strong>Class (static) variable:</strong> Shared across all
+            instances of the class.
+          </li>
+        </ul>
+        <pre><code>class Example {
+        static int count;     // class variable
+        int value;            // instance variable
+    }</code></pre>
+      </section>
+
+      <section id="four-pillars-oop" class="content-section">
+        <h2>Four Pillars of OOP</h2>
+
+        <h3>1. Encapsulation</h3>
+
+        <h4>What is encapsulation and why is it important?</h4>
+        <p>
+          Encapsulation is the concept of wrapping data (variables) and code
+          (methods) together into a single unit — usually a class. It restricts
+          direct access to some components and can prevent the accidental
+          modification of data.
+        </p>
+
+        <p><strong>Importance:</strong></p>
+        <ul>
+          <li>Protects internal state</li>
+          <li>Promotes modular design</li>
+          <li>Improves code maintainability</li>
+        </ul>
+
+        <h4>How do you achieve encapsulation in Java/Python?</h4>
+
+        <p><strong>Java:</strong></p>
+        <pre><code>public class Account {
+        private double balance;
+    
+        public double getBalance() { return balance; }
+        public void deposit(double amount) { balance += amount; }
+    }</code></pre>
+
+        <p><strong>Python:</strong></p>
+        <pre><code>class Account:
+        def __init__(self):
+            self.__balance = 0  # private variable
+    
+        def get_balance(self):
+            return self.__balance
+    
+        def deposit(self, amount):
+            self.__balance += amount</code></pre>
+
+        <h4>What is the benefit of using private variables?</h4>
+        <p>
+          Private variables prevent unauthorized access and modification from
+          outside the class, enforcing data protection.
+        </p>
+
+        <h4>Give a real-life example of encapsulation.</h4>
+        <p>
+          A <strong>bank account</strong>: You can deposit or withdraw through
+          methods, but you cannot directly change the balance.
+        </p>
+
+        <hr />
+
+        <h3>2. Abstraction</h3>
+
+        <h4>What is abstraction in OOP?</h4>
+        <p>
+          Abstraction is the process of hiding complex implementation details
+          and showing only the essential features of an object.
+        </p>
+
+        <h4>Difference between abstraction and encapsulation</h4>
+        <table style="width: 100%; border-collapse: collapse; margin: 1rem 0">
+          <tr
+            style="background-color: #f8f9fa; border-bottom: 1px solid #e9ecef"
+          >
+            <th style="text-align: left; padding: 0.75rem">Abstraction</th>
+            <th style="text-align: left; padding: 0.75rem">Encapsulation</th>
+          </tr>
+          <tr style="border-bottom: 1px solid #e9ecef">
+            <td style="padding: 0.75rem">
+              Focuses on hiding <strong>implementation</strong>
+            </td>
+            <td style="padding: 0.75rem">
+              Focuses on hiding <strong>data</strong>
+            </td>
+          </tr>
+          <tr style="border-bottom: 1px solid #e9ecef">
+            <td style="padding: 0.75rem">
+              Achieved via interfaces/abstract classes
+            </td>
+            <td style="padding: 0.75rem">Achieved via access modifiers</td>
+          </tr>
+        </table>
+
+        <h4>How is abstraction implemented in Java/Python?</h4>
+
+        <p><strong>Java:</strong></p>
+        <pre><code>abstract class Vehicle {
+        abstract void start();
+    }</code></pre>
+
+        <p><strong>Python:</strong></p>
+        <pre><code>from abc import ABC, abstractmethod
+    
+    class Vehicle(ABC):
+        @abstractmethod
+        def start(self):
+            pass</code></pre>
+
+        <h4>What is an abstract class? Can it have a constructor?</h4>
+        <p>
+          An abstract class is a class that cannot be instantiated and can have
+          abstract and concrete methods. Yes, it can have a constructor to
+          initialize fields.
+        </p>
+
+        <h4>What are abstract methods?</h4>
+        <p>
+          Abstract methods are methods declared without implementation.
+          Subclasses must override them.
+        </p>
+
+        <h4>Can we instantiate an abstract class?</h4>
+        <p>No, abstract classes cannot be instantiated directly.</p>
+
+        <hr />
+
+        <h3>3. Inheritance</h3>
+
+        <h4>What is inheritance and its advantages?</h4>
+        <p>
+          Inheritance is a mechanism where one class acquires the properties and
+          behaviors of another class. It promotes code reusability and a logical
+          class hierarchy.
+        </p>
+
+        <h4>Types of inheritance</h4>
+        <ul>
+          <li><strong>Single</strong> – one parent, one child</li>
+          <li>
+            <strong>Multilevel</strong> – inheritance through multiple levels
+          </li>
+          <li>
+            <strong>Multiple</strong> – one class inherits from multiple classes
+            (supported in Python)
+          </li>
+          <li>
+            <strong>Hierarchical</strong> – multiple classes inherit from one
+            base class
+          </li>
+          <li><strong>Hybrid</strong> – combination of above types</li>
+        </ul>
+
+        <h4>How is inheritance implemented in Java vs Python?</h4>
+
+        <p><strong>Java:</strong></p>
+        <pre><code>class Animal {
+        void sound() { System.out.println("Animal sound"); }
+    }
+    
+    class Dog extends Animal {
+        void bark() { System.out.println("Bark"); }
+    }</code></pre>
+
+        <p><strong>Python:</strong></p>
+        <pre><code>class Animal:
+        def sound(self):
+            print("Animal sound")
+    
+    class Dog(Animal):
+        def bark(self):
+            print("Bark")</code></pre>
+
+        <h4>What is method overriding?</h4>
+        <p>
+          Overriding occurs when a subclass provides a specific implementation
+          of a method already defined in its superclass.
+        </p>
+
+        <h4>Can constructors be inherited?</h4>
+        <p>
+          Constructors are not inherited, but the child class can call the
+          parent class constructor using <code>super()</code>.
+        </p>
+
+        <h4>Can private members be inherited?</h4>
+        <p>No, private members are not directly inherited.</p>
+
+        <h4>Use of <code>super</code> keyword in inheritance</h4>
+        <p>
+          <code>super</code> is used to refer to the immediate parent class and
+          is commonly used to call parent constructors or overridden methods.
+        </p>
+
+        <hr />
+
+        <h3>4. Polymorphism</h3>
+
+        <h4>What is polymorphism?</h4>
+        <p>
+          Polymorphism means "many forms." It allows objects to be treated as
+          instances of their parent class, with behavior that depends on their
+          actual subclass.
+        </p>
+
+        <h4>Types of polymorphism</h4>
+        <ul>
+          <li><strong>Compile-time (Static):</strong> Method overloading</li>
+          <li><strong>Runtime (Dynamic):</strong> Method overriding</li>
+        </ul>
+
+        <h4>What is method overloading and method overriding?</h4>
+
+        <p>
+          <strong>Overloading:</strong> Same method name, different parameters
+          (Java only)
+        </p>
+        <pre><code>class Display {
+        void show(int a) {}
+        void show(String s) {}
+    }</code></pre>
+
+        <p>
+          <strong>Overriding:</strong> Same method signature, different
+          implementation in subclass
+        </p>
+        <pre><code>class Animal {
+        void sound() { System.out.println("Sound"); }
+    }
+    class Dog extends Animal {
+        void sound() { System.out.println("Bark"); }
+    }</code></pre>
+
+        <h4>Can constructors be overloaded?</h4>
+        <p>
+          Yes, you can define multiple constructors with different parameters in
+          Java/C++.
+        </p>
+
+        <h4>Explain operator overloading</h4>
+        <p>
+          Operator overloading lets you redefine the meaning of operators for
+          user-defined types (e.g., <code>+</code>, <code>==</code> in
+          Python/C++).
+        </p>
+
+        <p><strong>Python:</strong></p>
+        <pre><code>class Point:
+        def __init__(self, x): self.x = x
+        def __add__(self, other): return Point(self.x + other.x)</code></pre>
+
+        <h4>What is dynamic dispatch?</h4>
+        <p>
+          Dynamic dispatch is the process of selecting which implementation of a
+          polymorphic method to call at runtime based on the object type.
+        </p>
+
+        <h4>Give real-world examples of polymorphism.</h4>
+        <ul>
+          <li>
+            A <strong>printer</strong> can print documents, PDFs, or images –
+            same interface, different behaviors.
+          </li>
+          <li>
+            A <strong>remote control</strong> for a TV or AC – the button looks
+            same, but behavior changes based on device.
+          </li>
+        </ul>
+      </section>
+
+      <section id="access-modifiers" class="content-section">
+        <h2>Access Modifiers / Specifiers</h2>
+
+        <h3>1. What are access modifiers in OOP?</h3>
+        <p>
+          Access modifiers (or access specifiers) define the visibility or
+          accessibility of classes, methods, and variables to other classes or
+          packages/modules.
+        </p>
+
+        <h3>2. Difference between public, private, and protected</h3>
+        <table style="width: 100%; border-collapse: collapse; margin: 1rem 0">
+          <tr
+            style="background-color: #f8f9fa; border-bottom: 1px solid #e9ecef"
+          >
+            <th style="text-align: left; padding: 0.75rem">Modifier</th>
+            <th style="text-align: left; padding: 0.75rem">Class</th>
+            <th style="text-align: left; padding: 0.75rem">
+              Package (Java) / Module (Python)
+            </th>
+            <th style="text-align: left; padding: 0.75rem">Subclass</th>
+            <th style="text-align: left; padding: 0.75rem">Outside</th>
+          </tr>
+          <tr style="border-bottom: 1px solid #e9ecef">
+            <td style="padding: 0.75rem"><code>public</code></td>
+            <td style="padding: 0.75rem">Yes</td>
+            <td style="padding: 0.75rem">Yes</td>
+            <td style="padding: 0.75rem">Yes</td>
+            <td style="padding: 0.75rem">Yes</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #e9ecef">
+            <td style="padding: 0.75rem"><code>protected</code></td>
+            <td style="padding: 0.75rem">Yes</td>
+            <td style="padding: 0.75rem">Yes</td>
+            <td style="padding: 0.75rem">Yes</td>
+            <td style="padding: 0.75rem">No</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #e9ecef">
+            <td style="padding: 0.75rem"><code>private</code></td>
+            <td style="padding: 0.75rem">Yes</td>
+            <td style="padding: 0.75rem">No</td>
+            <td style="padding: 0.75rem">No</td>
+            <td style="padding: 0.75rem">No</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #e9ecef">
+            <td style="padding: 0.75rem"><em>default</em> (Java only)</td>
+            <td style="padding: 0.75rem">Yes</td>
+            <td style="padding: 0.75rem">Yes</td>
+            <td style="padding: 0.75rem">No</td>
+            <td style="padding: 0.75rem">No</td>
+          </tr>
+        </table>
+
+        <p><strong>Java Example:</strong></p>
+        <pre><code>public class Example {
+        public int publicVar = 1;
+        protected int protectedVar = 2;
+        private int privateVar = 3;
+        int defaultVar = 4; // package-private
+    }</code></pre>
+
+        <p>
+          <strong>Python Example:</strong><br />
+          Python doesn't enforce strict access modifiers, but uses naming
+          conventions:
+        </p>
+        <pre><code>class Example:
+        def __init__(self):
+            self.public_var = 1          # public
+            self._protected_var = 2      # protected (by convention)
+            self.__private_var = 3       # private (name mangling)</code></pre>
+
+        <ul>
+          <li>
+            <code>__private_var</code> becomes
+            <code>_Example__private_var</code> internally (name mangling).
+          </li>
+          <li>
+            Python relies on <strong>developer discipline</strong> rather than
+            enforcement.
+          </li>
+        </ul>
+
+        <h3>3. What is default/package-private access in Java?</h3>
+        <p>
+          If no modifier is specified in Java, the member has
+          <strong>package-private</strong> access — it's accessible only within
+          the same package.
+        </p>
+
+        <h3>4. How does Python handle access control?</h3>
+        <p>Python does not have true private/protected keywords. Instead:</p>
+        <ul>
+          <li>
+            <code>_single_underscore</code>: indicates "protected" (use with
+            caution)
+          </li>
+          <li>
+            <code>__double_underscore</code>: triggers name mangling, simulating
+            "private"
+          </li>
+        </ul>
+        <p>
+          But all attributes can still technically be accessed from outside if
+          needed.
+        </p>
+
+        <h3>5. Can access modifiers be applied to classes?</h3>
+        <p><strong>In Java:</strong></p>
+        <ul>
+          <li>
+            Top-level classes can only be <code>public</code> or
+            <em>default</em> (package-private).
+          </li>
+          <li>
+            Inner classes can use <code>public</code>, <code>protected</code>,
+            <code>private</code>.
+          </li>
+        </ul>
+        <p><strong>In Python:</strong></p>
+        <ul>
+          <li>
+            All classes are public; access is controlled via attribute
+            conventions.
+          </li>
+        </ul>
+      </section>
+
+      <section id="constructors-destructors" class="content-section">
+        <h2>Constructors & Destructors</h2>
+
+        <h3>1. What is a constructor?</h3>
+        <p>
+          A constructor is a special method that is automatically called when an
+          object is created. It is used to initialize the object's state (i.e.,
+          its fields/attributes).
+        </p>
+
+        <h3>2. Characteristics of constructors</h3>
+        <ul>
+          <li>Name is same as the class name (Java, C++).</li>
+          <li>No return type (not even <code>void</code>).</li>
+          <li>Automatically invoked during object creation.</li>
+        </ul>
+
+        <h3>3. Types of constructors in Java</h3>
+        <ul>
+          <li><strong>Default Constructor:</strong> Takes no arguments.</li>
+          <li>
+            <strong>Parameterized Constructor:</strong> Accepts parameters to
+            initialize the object.
+          </li>
+          <li>
+            <strong>Copy Constructor:</strong> Creates a new object as a copy of
+            another (common in C++).
+          </li>
+        </ul>
+
+        <p><strong>Java Example:</strong></p>
+        <pre><code>class Person {
+        String name;
+        
+        // Default constructor
+        Person() {
+            name = "Unknown";
+        }
+    
+        // Parameterized constructor
+        Person(String name) {
+            this.name = name;
+        }
+    }</code></pre>
+
+        <h3>4. Constructor in Python</h3>
+        <p><strong>Python Example:</strong></p>
+        <pre><code>class Person:
+        def __init__(self, name="Unknown"):
+            self.name = name</code></pre>
+
+        <ul>
+          <li>Python uses <code>__init__()</code> as a constructor.</li>
+          <li>
+            You can have default arguments to simulate constructor overloading.
+          </li>
+        </ul>
+
+        <h3>5. Can constructors be overloaded?</h3>
+        <p><strong>Java:</strong> Yes.</p>
+        <pre><code>Person() {}
+    Person(String name) {}</code></pre>
+
+        <p>
+          <strong>Python:</strong> Not directly (no function overloading), but
+          you can use default arguments or <code>*args</code>.
+        </p>
+        <pre><code>class Person:
+        def __init__(self, name=None):
+            self.name = name if name else "Unknown"</code></pre>
+
+        <h3>6. What is constructor chaining?</h3>
+        <p>
+          Constructor chaining is when one constructor calls another constructor
+          in the same class or the parent class.
+        </p>
+
+        <p><strong>Java:</strong></p>
+        <pre><code>class Person {
+        String name;
+    
+        Person() {
+            this("Default");
+        }
+    
+        Person(String name) {
+            this.name = name;
+        }
+    }</code></pre>
+
+        <p>
+          <strong>Python:</strong> Can use <code>__init__</code> with logic, or
+          call parent constructor using <code>super()</code>.
+        </p>
+
+        <h3>7. What is a destructor?</h3>
+        <p>
+          A <strong>destructor</strong> is a special method called when an
+          object is destroyed to release resources.
+        </p>
+
+        <p>
+          <strong>Java:</strong> No explicit destructor. JVM garbage collector
+          handles it. You can override <code>finalize()</code> (deprecated in
+          modern Java).
+        </p>
+        <pre><code>protected void finalize() {
+        System.out.println("Object is being destroyed");
+    }</code></pre>
+
+        <p><strong>Python:</strong></p>
+        <pre><code>class Demo:
+        def __del__(self):
+            print("Destructor called")</code></pre>
+
+        <h3>8. Can we overload destructors?</h3>
+        <p>
+          No, neither in Java nor Python. There's only one destructor per class.
+        </p>
+
+        <h3>9. What is the difference between constructor and method?</h3>
+        <table style="width: 100%; border-collapse: collapse; margin: 1rem 0">
+          <tr
+            style="background-color: #f8f9fa; border-bottom: 1px solid #e9ecef"
+          >
+            <th style="text-align: left; padding: 0.75rem">Feature</th>
+            <th style="text-align: left; padding: 0.75rem">Constructor</th>
+            <th style="text-align: left; padding: 0.75rem">Method</th>
+          </tr>
+          <tr style="border-bottom: 1px solid #e9ecef">
+            <td style="padding: 0.75rem">Purpose</td>
+            <td style="padding: 0.75rem">Initializes object</td>
+            <td style="padding: 0.75rem">Defines behavior</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #e9ecef">
+            <td style="padding: 0.75rem">Name</td>
+            <td style="padding: 0.75rem">
+              Same as class (Java) / <code>__init__</code>
+            </td>
+            <td style="padding: 0.75rem">Any valid identifier</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #e9ecef">
+            <td style="padding: 0.75rem">Return type</td>
+            <td style="padding: 0.75rem">None</td>
+            <td style="padding: 0.75rem">Can have return value</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #e9ecef">
+            <td style="padding: 0.75rem">Invocation</td>
+            <td style="padding: 0.75rem">
+              Called automatically during object creation
+            </td>
+            <td style="padding: 0.75rem">Called manually</td>
+          </tr>
+        </table>
+
+        <h3>10. Can constructors be private?</h3>
+        <p>
+          <strong>Java:</strong> Yes, used in
+          <strong>Singleton pattern</strong> or factory methods.
+        </p>
+        <pre><code>class Singleton {
+        private static Singleton instance = new Singleton();
+        private Singleton() {}
+        public static Singleton getInstance() {
+            return instance;
+        }
+    }</code></pre>
+
+        <p>
+          <strong>Python:</strong> No enforced private constructors, but you can
+          simulate with metaclasses or naming conventions.
+        </p>
+      </section>
+
+      <section id="oop-keywords" class="content-section">
+        <h2>Keywords Related to OOP</h2>
+
+        <h3>1. What is the <code>this</code> keyword?</h3>
+        <p>
+          <strong>Java:</strong><br />
+          <code>this</code> refers to the current object — used to access
+          instance variables and methods from within the class.
+        </p>
+        <pre><code>class Person {
+        String name;
+        Person(String name) {
+            this.name = name; // refers to instance variable
+        }
+    }</code></pre>
+
+        <p>
+          <strong>Python:</strong><br />
+          Python uses <code>self</code> in place of <code>this</code>. It's
+          passed explicitly to instance methods.
+        </p>
+        <pre><code>class Person:
+        def __init__(self, name):
+            self.name = name  # self refers to current instance</code></pre>
+
+        <h3>2. What is the <code>super</code> keyword?</h3>
+        <p>
+          <strong>Java:</strong><br />
+          <code>super</code> refers to the <strong>parent class</strong>. It's
+          used to:
+        </p>
+        <ul>
+          <li>Access parent methods/variables</li>
+          <li>Call parent constructor</li>
+        </ul>
+        <pre><code>class Animal {
+        void sound() { System.out.println("Animal sound"); }
+    }
+    class Dog extends Animal {
+        void sound() {
+            super.sound(); // call parent method
+            System.out.println("Bark");
+        }
+    }</code></pre>
+
+        <p>
+          <strong>Python:</strong><br />
+          Python uses <code>super()</code> similarly to call parent methods or
+          constructors.
+        </p>
+        <pre><code>class Animal:
+        def __init__(self): print("Animal constructor")
+    
+    class Dog(Animal):
+        def __init__(self):
+            super().__init__()  # calls parent constructor
+            print("Dog constructor")</code></pre>
+
+        <h3>3. What is the <code>final</code> keyword in Java?</h3>
+        <p>
+          <code>final</code> is used to <strong>restrict modification</strong>.
+        </p>
+        <ul>
+          <li><strong>final variable</strong> → cannot be reassigned.</li>
+          <li><strong>final method</strong> → cannot be overridden.</li>
+          <li><strong>final class</strong> → cannot be inherited.</li>
+        </ul>
+        <pre><code>final int x = 10;
+    
+    final class A {} // Can't extend A</code></pre>
+
+        <h3>4. What is the <code>static</code> keyword?</h3>
+        <ul>
+          <li>
+            Belongs to the <strong>class</strong> rather than an instance.
+          </li>
+          <li>Can be accessed without creating an object.</li>
+          <li>Used for variables, methods, and blocks.</li>
+        </ul>
+        <pre><code>class Example {
+        static int count = 0;
+        static void display() {
+            System.out.println("Static method");
+        }
+    }</code></pre>
+
+        <p><strong>Python equivalent:</strong></p>
+        <pre><code>class Example:
+        count = 0
+    
+        @staticmethod
+        def display():
+            print("Static method")</code></pre>
+
+        <h3>
+          5. What is the difference between <code>this</code> and
+          <code>super</code>?
+        </h3>
+        <table style="width: 100%; border-collapse: collapse; margin: 1rem 0">
+          <tr
+            style="background-color: #f8f9fa; border-bottom: 1px solid #e9ecef"
+          >
+            <th style="text-align: left; padding: 0.75rem">Keyword</th>
+            <th style="text-align: left; padding: 0.75rem">Refers to</th>
+            <th style="text-align: left; padding: 0.75rem">Used for</th>
+          </tr>
+          <tr style="border-bottom: 1px solid #e9ecef">
+            <td style="padding: 0.75rem"><code>this</code></td>
+            <td style="padding: 0.75rem">Current class instance</td>
+            <td style="padding: 0.75rem">
+              Accessing members of the current class
+            </td>
+          </tr>
+          <tr style="border-bottom: 1px solid #e9ecef">
+            <td style="padding: 0.75rem"><code>super</code></td>
+            <td style="padding: 0.75rem">Parent class instance</td>
+            <td style="padding: 0.75rem">
+              Accessing members of the parent class
+            </td>
+          </tr>
+        </table>
+
+        <h3>6. Can a static method access instance variables?</h3>
+        <p>
+          <strong>No.</strong> Static methods belong to the class, and they
+          don't have access to <code>this</code> or instance members unless an
+          object is passed explicitly.
+        </p>
+
+        <h3>7. Can we override static methods?</h3>
+        <p>
+          <strong>No.</strong> Static methods are
+          <strong>not polymorphic</strong> and are resolved at compile time in
+          Java.
+        </p>
+      </section>
+
+      <section id="interfaces-abstract-classes" class="content-section">
+        <h2>Interfaces & Abstract Classes</h2>
+
+        <h3>1. What is an abstract class?</h3>
+        <p>
+          An abstract class is a class that
+          <strong>cannot be instantiated</strong> and may contain
+          <strong>abstract methods</strong> (methods without a body) as well as
+          <strong>concrete methods</strong> (with a body).
+        </p>
+
+        <h3>2. What is an interface?</h3>
+        <p>
+          An interface is a <strong>contract</strong> that a class must follow.
+          It only contains <strong>method declarations</strong> (without
+          implementation) and <strong>constants</strong> (in Java).
+        </p>
+        <ul>
+          <li>A class <strong>implements</strong> an interface.</li>
+          <li>Promotes <strong>multiple inheritance</strong> of type.</li>
+        </ul>
+
+        <h3>3. Difference between abstract class and interface</h3>
+        <table style="width: 100%; border-collapse: collapse; margin: 1rem 0">
+          <tr
+            style="background-color: #f8f9fa; border-bottom: 1px solid #e9ecef"
+          >
+            <th style="text-align: left; padding: 0.75rem">Feature</th>
+            <th style="text-align: left; padding: 0.75rem">Abstract Class</th>
+            <th style="text-align: left; padding: 0.75rem">Interface</th>
+          </tr>
+          <tr style="border-bottom: 1px solid #e9ecef">
+            <td style="padding: 0.75rem">Methods</td>
+            <td style="padding: 0.75rem">
+              Can have both abstract and concrete
+            </td>
+            <td style="padding: 0.75rem">
+              Only abstract (Java 7), default/static from Java 8
+            </td>
+          </tr>
+          <tr style="border-bottom: 1px solid #e9ecef">
+            <td style="padding: 0.75rem">Variables</td>
+            <td style="padding: 0.75rem">
+              Instance and static variables allowed
+            </td>
+            <td style="padding: 0.75rem">Only public static final constants</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #e9ecef">
+            <td style="padding: 0.75rem">Inheritance</td>
+            <td style="padding: 0.75rem">
+              <code>extends</code> (single inheritance)
+            </td>
+            <td style="padding: 0.75rem">
+              <code>implements</code> (multiple inheritance)
+            </td>
+          </tr>
+          <tr style="border-bottom: 1px solid #e9ecef">
+            <td style="padding: 0.75rem">Constructors</td>
+            <td style="padding: 0.75rem">Yes</td>
+            <td style="padding: 0.75rem">No</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #e9ecef">
+            <td style="padding: 0.75rem">Instantiation</td>
+            <td style="padding: 0.75rem">Cannot instantiate</td>
+            <td style="padding: 0.75rem">Cannot instantiate</td>
+          </tr>
+        </table>
+
+        <h3>4. Can we have method implementations in interfaces?</h3>
+        <ul>
+          <li>
+            <strong>Java:</strong>
+            <ul>
+              <li>
+                <strong>Java 8</strong> introduced <strong>default</strong> and
+                <strong>static methods</strong> with implementation.
+              </li>
+              <li>
+                <strong>Java 9+</strong> allows private methods in interfaces.
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <pre><code>interface A {
+      default void show() {
+          System.out.println("Default method in interface");
+      }
+  }</code></pre>
+
+        <ul>
+          <li>
+            <strong>Python:</strong> Python does not have interfaces built-in
+            like Java, but it uses <strong>abstract base classes</strong> (<code
+              >abc</code
+            >
+            module).
+          </li>
+        </ul>
+
+        <h3>5. Abstract class vs Interface in Python</h3>
+        <p>Python allows abstract classes using <code>abc</code> module.</p>
+        <pre><code>from abc import ABC, abstractmethod
+  
+  class Shape(ABC):
+      @abstractmethod
+      def area(self): pass</code></pre>
+
+        <p>
+          To mimic interface behavior, define an abstract class with only
+          abstract methods.
+        </p>
+
+        <h3>6. Can an abstract class have a constructor?</h3>
+        <p>
+          Yes. An abstract class can have a constructor to initialize data
+          members, and it is called when a subclass is instantiated.
+        </p>
+
+        <p><strong>Java:</strong></p>
+        <pre><code>abstract class Animal {
+      Animal() {
+          System.out.println("Animal constructor");
+      }
+  }</code></pre>
+
+        <p><strong>Python:</strong></p>
+        <pre><code>class Animal(ABC):
+      def __init__(self):
+          print("Animal constructor")</code></pre>
+
+        <h3>7. Can a class implement multiple interfaces?</h3>
+        <p>
+          <strong>Java:</strong> Yes. A class can implement multiple interfaces.
+        </p>
+        <pre><code>interface A {}
+  interface B {}
+  class C implements A, B {}</code></pre>
+
+        <p><strong>Python:</strong> Supports multiple inheritance directly.</p>
+
+        <h3>8. Can an interface extend another interface?</h3>
+        <p>
+          <strong>Java:</strong> Yes. An interface can extend one or more
+          interfaces.
+        </p>
+        <pre><code>interface A {}
+  interface B extends A {}</code></pre>
+
+        <h3>9. Why use interfaces?</h3>
+        <ul>
+          <li>Supports <strong>polymorphism</strong></li>
+          <li>Promotes <strong>loose coupling</strong></li>
+          <li>Enables <strong>multiple inheritance</strong></li>
+          <li>Defines <strong>APIs/contracts</strong> for external systems</li>
+        </ul>
+
+        <h3>10. Can a class be abstract without abstract methods?</h3>
+        <p>
+          Yes. You can declare a class abstract even if it has no abstract
+          methods, to prevent instantiation.
+        </p>
+        <pre><code>abstract class Animal {
+      void eat() {
+          System.out.println("Eat");
+      }
+  }</code></pre>
+      </section>
+
+      <section id="class-relationships" class="content-section">
+        <h2>Class Relationships</h2>
+
+        <h3>1. What is Association in OOP?</h3>
+        <p>
+          Association represents a
+          <strong>relationship between two independent classes</strong>. One
+          class uses or is aware of another.
+        </p>
+        <ul>
+          <li>
+            Example: A <code>Teacher</code> works in a <code>School</code>.
+          </li>
+          <li>
+            It can be <strong>one-to-one</strong>, <strong>one-to-many</strong>,
+            <strong>many-to-one</strong>, or <strong>many-to-many</strong>.
+          </li>
+        </ul>
+
+        <p><strong>Java Example:</strong></p>
+        <pre><code>class Teacher {
+        String name;
+    }
+    
+    class School {
+        Teacher teacher; // Association
+    }</code></pre>
+
+        <p><strong>Python Example:</strong></p>
+        <pre><code>class Teacher:
+        def __init__(self, name):
+            self.name = name
+    
+    class School:
+        def __init__(self, teacher):
+            self.teacher = teacher  # Association</code></pre>
+
+        <h3>2. What is Aggregation in OOP?</h3>
+        <p>
+          Aggregation is a <strong>"has-a" relationship</strong>, where one
+          class contains another but both can
+          <strong>exist independently</strong>.
+        </p>
+        <ul>
+          <li>
+            Example: A <code>Department</code> has <code>Professors</code>, but
+            if the department is deleted, professors may still exist.
+          </li>
+          <li>Represented as a <strong>weaker form</strong> of composition.</li>
+        </ul>
+
+        <p><strong>Java Example:</strong></p>
+        <pre><code>class Professor {
+        String name;
+    }
+    
+    class Department {
+        List&lt;Professor&gt; professors; // Aggregation
+    
+        Department(List&lt;Professor&gt; professors) {
+            this.professors = professors;
+        }
+    }</code></pre>
+
+        <p><strong>Python Example:</strong></p>
+        <pre><code>class Professor:
+        def __init__(self, name):
+            self.name = name
+    
+    class Department:
+        def __init__(self, professors):
+            self.professors = professors</code></pre>
+
+        <h3>3. What is Composition in OOP?</h3>
+        <p>
+          Composition is a stronger form of Aggregation. If the container object
+          is destroyed, the contained objects
+          <strong>also get destroyed</strong>.
+        </p>
+        <ul>
+          <li>
+            Example: A <code>House</code> has <code>Rooms</code>. If the house
+            is destroyed, rooms are too.
+          </li>
+        </ul>
+
+        <p><strong>Java Example:</strong></p>
+        <pre><code>class Room {
+        String name;
+        Room(String name) {
+            this.name = name;
+        }
+    }
+    
+    class House {
+        Room room;
+    
+        House() {
+            room = new Room("Bedroom"); // Strong ownership
+        }
+    }</code></pre>
+
+        <p><strong>Python Example:</strong></p>
+        <pre><code>class Room:
+        def __init__(self, name):
+            self.name = name
+    
+    class House:
+        def __init__(self):
+            self.room = Room("Bedroom")  # Strong containment</code></pre>
+
+        <h3>4. Difference between Association, Aggregation, and Composition</h3>
+        <table style="width: 100%; border-collapse: collapse; margin: 1rem 0">
+          <tr
+            style="background-color: #f8f9fa; border-bottom: 1px solid #e9ecef"
+          >
+            <th style="text-align: left; padding: 0.75rem">Feature</th>
+            <th style="text-align: left; padding: 0.75rem">Association</th>
+            <th style="text-align: left; padding: 0.75rem">Aggregation</th>
+            <th style="text-align: left; padding: 0.75rem">Composition</th>
+          </tr>
+          <tr style="border-bottom: 1px solid #e9ecef">
+            <td style="padding: 0.75rem">Relationship</td>
+            <td style="padding: 0.75rem">General (uses-a)</td>
+            <td style="padding: 0.75rem">Has-a (weak)</td>
+            <td style="padding: 0.75rem">Has-a (strong)</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #e9ecef">
+            <td style="padding: 0.75rem">Dependency</td>
+            <td style="padding: 0.75rem">Low</td>
+            <td style="padding: 0.75rem">Low</td>
+            <td style="padding: 0.75rem">High</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #e9ecef">
+            <td style="padding: 0.75rem">Lifetime</td>
+            <td style="padding: 0.75rem">Independent</td>
+            <td style="padding: 0.75rem">Independent</td>
+            <td style="padding: 0.75rem">Dependent (child dies with parent)</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #e9ecef">
+            <td style="padding: 0.75rem">Example</td>
+            <td style="padding: 0.75rem">Student–Library</td>
+            <td style="padding: 0.75rem">Department–Professor</td>
+            <td style="padding: 0.75rem">House–Room</td>
+          </tr>
+        </table>
+
+        <h3>5. How to choose between aggregation and composition?</h3>
+        <ul>
+          <li>
+            Use <strong>aggregation</strong> when the contained object can
+            outlive the container.
+          </li>
+          <li>
+            Use <strong>composition</strong> when the contained object
+            <strong>should not exist</strong> without the container.
+          </li>
+        </ul>
+      </section>
+
+      <section id="polymorphism" class="content-section">
+        <h2>Polymorphism</h2>
+
+        <h3>1. What is polymorphism in OOP?</h3>
+        <p>
+          Polymorphism means <strong>"many forms."</strong> It allows objects to
+          behave differently based on their <strong>context</strong> or
+          <strong>data types</strong>.
+        </p>
+        <p>Two main types:</p>
+        <ul>
+          <li>
+            <strong>Compile-time polymorphism</strong> (Method Overloading)
+          </li>
+          <li><strong>Runtime polymorphism</strong> (Method Overriding)</li>
+        </ul>
+
+        <h3>2. What is method overloading?</h3>
+        <p>
+          <strong>Method Overloading</strong> = Same method name, but different
+          parameters (number or type) in the <strong>same class</strong>.
+        </p>
+        <p><strong>Java Example:</strong></p>
+        <pre><code>class Calculator {
+      int add(int a, int b) {
+          return a + b;
+      }
+  
+      double add(double a, double b) {
+          return a + b;
+      }
+  }</code></pre>
+
+        <p>
+          <strong>Python Example:</strong><br />
+          Python doesn't support true method overloading; use default arguments
+          or <code>*args</code>.
+        </p>
+        <pre><code>class Calculator:
+      def add(self, a, b=0):
+          return a + b</code></pre>
+
+        <p>
+          Or with <code>@singledispatch</code> from <code>functools</code> for
+          function overloading based on type.
+        </p>
+
+        <h3>3. What is method overriding?</h3>
+        <p>
+          <strong>Method Overriding</strong> = Subclass provides a
+          <strong>new implementation</strong> of a method inherited from a
+          superclass.
+        </p>
+        <p><strong>Java Example:</strong></p>
+        <pre><code>class Animal {
+      void sound() {
+          System.out.println("Animal sound");
+      }
+  }
+  
+  class Dog extends Animal {
+      @Override
+      void sound() {
+          System.out.println("Bark");
+      }
+  }</code></pre>
+
+        <p><strong>Python Example:</strong></p>
+        <pre><code>class Animal:
+      def sound(self):
+          print("Animal sound")
+  
+  class Dog(Animal):
+      def sound(self):
+          print("Bark")</code></pre>
+
+        <h3>4. Difference between overloading and overriding</h3>
+        <table style="width: 100%; border-collapse: collapse; margin: 1rem 0">
+          <tr
+            style="background-color: #f8f9fa; border-bottom: 1px solid #e9ecef"
+          >
+            <th style="text-align: left; padding: 0.75rem">Feature</th>
+            <th style="text-align: left; padding: 0.75rem">Overloading</th>
+            <th style="text-align: left; padding: 0.75rem">Overriding</th>
+          </tr>
+          <tr style="border-bottom: 1px solid #e9ecef">
+            <td style="padding: 0.75rem">Occurs in</td>
+            <td style="padding: 0.75rem">Same class</td>
+            <td style="padding: 0.75rem">Parent-child classes</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #e9ecef">
+            <td style="padding: 0.75rem">Parameters</td>
+            <td style="padding: 0.75rem">Must differ</td>
+            <td style="padding: 0.75rem">Must be same</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #e9ecef">
+            <td style="padding: 0.75rem">Return type</td>
+            <td style="padding: 0.75rem">Can differ</td>
+            <td style="padding: 0.75rem">Should be same or covariant (Java)</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #e9ecef">
+            <td style="padding: 0.75rem">Binding time</td>
+            <td style="padding: 0.75rem">Compile-time</td>
+            <td style="padding: 0.75rem">Runtime</td>
+          </tr>
+        </table>
+
+        <h3>5. Can we override static methods?</h3>
+        <p>
+          <strong>No.</strong> Static methods are
+          <strong>not polymorphic</strong>. You can <strong>hide</strong> them
+          in Java, but not override.
+        </p>
+
+        <h3>6. Can constructors be overridden?</h3>
+        <p>
+          <strong>No.</strong> Constructors are <strong>not inherited</strong>,
+          hence cannot be overridden.
+        </p>
+
+        <h3>7. Can we overload constructors?</h3>
+        <p><strong>Yes.</strong> Constructor overloading is common.</p>
+        <p><strong>Java:</strong></p>
+        <pre><code>class Person {
+      Person() {}
+      Person(String name) {}
+  }</code></pre>
+
+        <p>
+          <strong>Python:</strong><br />
+          Not directly. Use default values or <code>*args</code>:
+        </p>
+        <pre><code>class Person:
+      def __init__(self, name=None):
+          self.name = name or "Unknown"</code></pre>
+
+        <h3>8. Can we override private or final methods in Java?</h3>
+        <ul>
+          <li>
+            <strong>Private methods</strong>: No (they are not inherited).
+          </li>
+          <li><strong>Final methods</strong>: No (cannot be overridden).</li>
+        </ul>
+
+        <h3>9. What is dynamic method dispatch?</h3>
+        <p>
+          Dynamic Method Dispatch is Java's
+          <strong>runtime polymorphism</strong> where method calls are resolved
+          <strong>at runtime</strong> based on the actual object type.
+        </p>
+        <pre><code>Animal a = new Dog();  // Upcasting
+  a.sound(); // Bark</code></pre>
+      </section>
+
+      <section id="exception-handling" class="content-section">
+        <h2>Exception Handling in OOP</h2>
+
+        <h3>1. What is exception handling in OOP?</h3>
+        <p>
+          Exception handling is a mechanism to
+          <strong>handle runtime errors</strong> gracefully, without crashing
+          the program.
+        </p>
+        <p>It promotes:</p>
+        <ul>
+          <li><strong>Robustness</strong></li>
+          <li><strong>Maintainability</strong></li>
+          <li>
+            <strong
+              >Separation of error-handling logic from business logic</strong
+            >
+          </li>
+        </ul>
+
+        <h3>2. What is the difference between error and exception?</h3>
+        <table style="width: 100%; border-collapse: collapse; margin: 1rem 0">
+          <tr
+            style="background-color: #f8f9fa; border-bottom: 1px solid #e9ecef"
+          >
+            <th style="text-align: left; padding: 0.75rem">Feature</th>
+            <th style="text-align: left; padding: 0.75rem">Error</th>
+            <th style="text-align: left; padding: 0.75rem">Exception</th>
+          </tr>
+          <tr style="border-bottom: 1px solid #e9ecef">
+            <td style="padding: 0.75rem">Type</td>
+            <td style="padding: 0.75rem">
+              Severe issue, typically unrecoverable
+            </td>
+            <td style="padding: 0.75rem">Logical issue, can be handled</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #e9ecef">
+            <td style="padding: 0.75rem">Examples</td>
+            <td style="padding: 0.75rem">
+              <code>OutOfMemoryError</code>, <code>StackOverflowError</code>
+            </td>
+            <td style="padding: 0.75rem">
+              <code>NullPointerException</code>, <code>IOError</code>
+            </td>
+          </tr>
+          <tr style="border-bottom: 1px solid #e9ecef">
+            <td style="padding: 0.75rem">Handling</td>
+            <td style="padding: 0.75rem">Cannot be handled normally</td>
+            <td style="padding: 0.75rem">Can be handled using try-catch</td>
+          </tr>
+        </table>
+
+        <h3>3. What are the types of exceptions in Java?</h3>
+        <ol>
+          <li>
+            <strong>Checked Exceptions</strong>: Checked at compile time (e.g.,
+            <code>IOException</code>, <code>SQLException</code>)
+          </li>
+          <li>
+            <strong>Unchecked Exceptions</strong>: Occur at runtime (e.g.,
+            <code>NullPointerException</code>, <code>ArithmeticException</code>)
+          </li>
+        </ol>
+
+        <h3>4. Exception hierarchy in Java</h3>
+        <pre><code>Object  
+  └── Throwable  
+        ├── Error  
+        └── Exception  
+              ├── RuntimeException  
+              └── Other checked exceptions</code></pre>
+
+        <h3>5. What is the try-catch-finally block?</h3>
+        <p>Used to handle exceptions:</p>
+        <pre><code>try {
+    // code that may throw an exception
+} catch (ExceptionType e) {
+    // handler
+} finally {
+    // cleanup code (always executes)
+}</code></pre>
+
+        <p><strong>Python Equivalent:</strong></p>
+        <pre><code>try:
+    # risky code
+except Exception as e:
+    # handle exception
+finally:
+    # always run this block</code></pre>
+
+        <h3>6. What is the <code>finally</code> block?</h3>
+        <ul>
+          <li>
+            Executes <strong>regardless</strong> of whether an exception was
+            thrown or caught.
+          </li>
+          <li>
+            Used for <strong>resource cleanup</strong> (closing files, releasing
+            DB connections).
+          </li>
+        </ul>
+
+        <h3>
+          7. What is the use of <code>throw</code> and <code>throws</code> in
+          Java?
+        </h3>
+        <ul>
+          <li>
+            <code>throw</code>: Used to <strong>manually throw</strong> an
+            exception.
+          </li>
+          <li><code>throws</code>: Declares exceptions a method can throw.</li>
+        </ul>
+        <pre><code>void checkAge(int age) throws Exception {
+    if (age < 18) throw new Exception("Underage");
+}</code></pre>
+
+        <h3>8. Can we have multiple catch blocks?</h3>
+        <p>
+          Yes. Java allows <strong>multiple catch blocks</strong> to handle
+          different exceptions specifically.
+        </p>
+        <pre><code>try {
+    // risky code
+} catch (IOException e) {
+    // handle IO
+} catch (Exception e) {
+    // handle others
+}</code></pre>
+
+        <h3>9. Can we catch multiple exceptions in one block?</h3>
+        <p>Yes, since Java 7:</p>
+        <pre><code>catch (IOException | SQLException e) {
+    // common handler
+}</code></pre>
+
+        <h3>10. How do you create a custom exception?</h3>
+        <p><strong>Java:</strong></p>
+        <pre><code>class MyException extends Exception {
+    MyException(String message) {
+        super(message);
+    }
+}</code></pre>
+
+        <p><strong>Python:</strong></p>
+        <pre><code>class MyException(Exception):
+    def __init__(self, message):
+        super().__init__(message)
+</code></pre>
+
+        <h3>11. What is exception propagation?</h3>
+        <p>
+          If a method doesn't catch an exception, it is passed to the
+          <strong>calling method</strong>, continuing up the call stack.
+        </p>
+      </section>
+
+      <section id="miscellaneous-oop" class="content-section">
+        <h2>Miscellaneous QnA</h2>
+
+        <h3>1. What is object cloning?</h3>
+        <p>
+          <strong>Object cloning</strong> creates an
+          <strong>exact copy</strong> of an object with the same values.
+        </p>
+
+        <p>
+          <strong>Java Example:</strong><br />
+          Java provides <code>Cloneable</code> interface and
+          <code>clone()</code> method:
+        </p>
+        <pre><code>class Student implements Cloneable {
+  int id;
+  String name;
+
+  public Student clone() throws CloneNotSupportedException {
+      return (Student) super.clone();
+  }
+}</code></pre>
+        <ul>
+          <li>
+            Must implement <code>Cloneable</code>, otherwise
+            <code>CloneNotSupportedException</code>.
+          </li>
+        </ul>
+
+        <p><strong>Python Example:</strong></p>
+        <pre><code>import copy
+
+original = {"name": "John"}
+clone = copy.copy(original)        # Shallow copy
+deep_clone = copy.deepcopy(original)  # Deep copy</code></pre>
+
+        <h3>2. What is a marker interface?</h3>
+        <p>
+          A <strong>marker interface</strong> is an empty interface used to
+          <strong>mark</strong> a class with a capability.
+        </p>
+        <p>
+          Examples: <code>Serializable</code>, <code>Cloneable</code> in Java.
+        </p>
+        <pre><code>class Student implements Serializable {}</code></pre>
+        <p>Python uses decorators or metadata instead.</p>
+
+        <h3>3. What is immutability in OOP?</h3>
+        <p>
+          An <strong>immutable object</strong> cannot be modified after
+          creation.
+        </p>
+
+        <p><strong>Java Example (Immutable class):</strong></p>
+        <pre><code>final class Person {
+  private final String name;
+
+  Person(String name) {
+      this.name = name;
+  }
+
+  public String getName() {
+      return name;
+  }
+}</code></pre>
+
+        <p><strong>Python Example:</strong></p>
+        <pre><code>from dataclasses import dataclass
+
+@dataclass(frozen=True)
+class Person:
+  name: str</code></pre>
+
+        <h3>4. What is encapsulation vs immutability?</h3>
+        <table style="width: 100%; border-collapse: collapse; margin: 1rem 0">
+          <tr
+            style="background-color: #f8f9fa; border-bottom: 1px solid #e9ecef"
+          >
+            <th style="text-align: left; padding: 0.75rem">Concept</th>
+            <th style="text-align: left; padding: 0.75rem">Encapsulation</th>
+            <th style="text-align: left; padding: 0.75rem">Immutability</th>
+          </tr>
+          <tr style="border-bottom: 1px solid #e9ecef">
+            <td style="padding: 0.75rem">Purpose</td>
+            <td style="padding: 0.75rem">Hides internal data</td>
+            <td style="padding: 0.75rem">Prevents modification</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #e9ecef">
+            <td style="padding: 0.75rem">Access</td>
+            <td style="padding: 0.75rem">Via getters/setters</td>
+            <td style="padding: 0.75rem">Only via getters</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #e9ecef">
+            <td style="padding: 0.75rem">Can change?</td>
+            <td style="padding: 0.75rem">Yes, if allowed</td>
+            <td style="padding: 0.75rem">No</td>
+          </tr>
+        </table>
+
+        <h3>5. What is data hiding?</h3>
+        <p>
+          Data hiding refers to restricting access to internal object data by
+          making fields <code>private</code> and exposing only necessary APIs.
+        </p>
+
+        <p><strong>Java:</strong></p>
+        <pre><code>class Account {
+  private double balance;
+
+  public double getBalance() {
+      return balance;
+  }
+}</code></pre>
+
+        <p><strong>Python:</strong></p>
+        <pre><code>class Account:
+  def __init__(self):
+      self.__balance = 0  # double underscore for name mangling</code></pre>
+
+        <h3>6. What is cohesion and coupling?</h3>
+        <ul>
+          <li>
+            <strong>Cohesion</strong>: Degree to which class members are related
+            to each other.
+            <ul>
+              <li><strong>High cohesion = Good design</strong></li>
+            </ul>
+          </li>
+          <li>
+            <strong>Coupling</strong>: Degree of dependency between
+            modules/classes.
+            <ul>
+              <li><strong>Low coupling = Better modularity</strong></li>
+            </ul>
+          </li>
+        </ul>
+
+        <h3>7. What is a singleton class?</h3>
+        <p>
+          A <strong>singleton</strong> ensures only
+          <strong>one instance</strong> of a class exists during runtime.
+        </p>
+
+        <p><strong>Java Example:</strong></p>
+        <pre><code>class Singleton {
+  private static Singleton instance = new Singleton();
+  private Singleton() {}
+  public static Singleton getInstance() {
+      return instance;
+  }
+}</code></pre>
+
+        <p><strong>Python Example:</strong></p>
+        <pre><code>class Singleton:
+  _instance = None
+  def __new__(cls):
+      if cls._instance is None:
+          cls._instance = super().__new__(cls)
+      return cls._instance</code></pre>
+
+        <h3>8. What is the difference between deep copy and shallow copy?</h3>
+        <table style="width: 100%; border-collapse: collapse; margin: 1rem 0">
+          <tr
+            style="background-color: #f8f9fa; border-bottom: 1px solid #e9ecef"
+          >
+            <th style="text-align: left; padding: 0.75rem">Copy Type</th>
+            <th style="text-align: left; padding: 0.75rem">
+              Copies References?
+            </th>
+            <th style="text-align: left; padding: 0.75rem">
+              Copies Nested Objects?
+            </th>
+          </tr>
+          <tr style="border-bottom: 1px solid #e9ecef">
+            <td style="padding: 0.75rem">Shallow Copy</td>
+            <td style="padding: 0.75rem">Yes</td>
+            <td style="padding: 0.75rem">No</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #e9ecef">
+            <td style="padding: 0.75rem">Deep Copy</td>
+            <td style="padding: 0.75rem">No</td>
+            <td style="padding: 0.75rem">Yes</td>
+          </tr>
+        </table>
+
+        <h3>9. What is object slicing? (Java-specific)</h3>
+        <p>
+          <strong>Object slicing</strong> occurs when a subclass object is
+          assigned to a superclass reference, and the subclass-specific
+          fields/methods are sliced off (not accessible).
+        </p>
+        <pre><code>class A { int x; }
+class B extends A { int y; }
+
+A obj = new B(); // obj.y not accessible</code></pre>
+        <p>Not applicable in Python due to dynamic typing.</p>
+
+        <h3>
+          10. What is the difference between instance variable and class
+          variable?
+        </h3>
+        <table style="width: 100%; border-collapse: collapse; margin: 1rem 0">
+          <tr
+            style="background-color: #f8f9fa; border-bottom: 1px solid #e9ecef"
+          >
+            <th style="text-align: left; padding: 0.75rem">Feature</th>
+            <th style="text-align: left; padding: 0.75rem">
+              Instance Variable
+            </th>
+            <th style="text-align: left; padding: 0.75rem">Class Variable</th>
+          </tr>
+          <tr style="border-bottom: 1px solid #e9ecef">
+            <td style="padding: 0.75rem">Storage</td>
+            <td style="padding: 0.75rem">Per object</td>
+            <td style="padding: 0.75rem">Shared across all objects</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #e9ecef">
+            <td style="padding: 0.75rem">Defined using</td>
+            <td style="padding: 0.75rem">
+              No <code>static</code> keyword (Java)
+            </td>
+            <td style="padding: 0.75rem"><code>static</code> keyword (Java)</td>
+          </tr>
+        </table>
+
+        <p><strong>Java:</strong></p>
+        <pre><code>class MyClass {
+  int x;           // instance
+  static int y;    // class
+}</code></pre>
+
+        <p><strong>Python:</strong></p>
+        <pre><code>class MyClass:
+  x = 5       # class variable
+
+  def __init__(self):
+      self.y = 10  # instance variable</code></pre>
+      </section>
+    </main>
+
+    <script>
+      // JavaScript for handling the hamburger menu and automatic navigation
+      document.addEventListener("DOMContentLoaded", function () {
+        const menuToggle = document.getElementById("menu-toggle");
+        const sidebar = document.getElementById("sidebar");
+        const navList = document.getElementById("nav-list");
+
+        // Automatically generate navigation from h2 tags
+        function generateNavigation() {
+          // Find all section h2 elements
+          const sections = document.querySelectorAll(".content-section h2");
+
+          // Clear existing navigation
+          navList.innerHTML = "";
+
+          // Create navigation items from h2 tags
+          sections.forEach((section, index) => {
+            // Get parent section id or create one if it doesn't exist
+            const parentSection = section.closest(".content-section");
+            let sectionId = parentSection.id;
+
+            if (!sectionId) {
+              // Create an ID based on the heading text if none exists
+              sectionId = section.textContent
+                .toLowerCase()
+                .replace(/\s+/g, "-");
+              parentSection.id = sectionId;
+            }
+
+            // Create navigation item
+            const listItem = document.createElement("li");
+            listItem.className = "nav-item";
+
+            const link = document.createElement("a");
+            link.href = `#${sectionId}`;
+            link.className = "nav-link";
+            link.textContent = section.textContent;
+
+            // Set the first item as active by default
+            if (index === 0) {
+              link.classList.add("active");
+            }
+
+            listItem.appendChild(link);
+            navList.appendChild(listItem);
+          });
+        }
+
+        // Generate the navigation
+        generateNavigation();
+
+        // Get all nav links after they've been generated
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        // Toggle the sidebar when the hamburger is clicked
+        menuToggle.addEventListener("click", function () {
+          sidebar.classList.toggle("active");
+          menuToggle.classList.toggle("active");
+        });
+
+        // Handle navigation clicks
+        navLinks.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            // Remove active class from all links
+            navLinks.forEach((item) => item.classList.remove("active"));
+
+            // Add active class to clicked link
+            this.classList.add("active");
+
+            // Close sidebar on mobile after clicking a link
+            if (window.innerWidth <= 768) {
+              sidebar.classList.remove("active");
+              menuToggle.classList.remove("active");
+            }
+          });
+        });
+
+        // Close sidebar when clicking outside on mobile
+        document.addEventListener("click", function (e) {
+          if (
+            window.innerWidth <= 768 &&
+            !sidebar.contains(e.target) &&
+            !menuToggle.contains(e.target) &&
+            sidebar.classList.contains("active")
+          ) {
+            sidebar.classList.remove("active");
+            menuToggle.classList.remove("active");
+          }
+        });
+
+        // Handle scroll to update active link based on visible section
+        window.addEventListener("scroll", function () {
+          // Get all sections
+          const sections = document.querySelectorAll(".content-section");
+
+          // Determine which section is currently most visible
+          let currentSectionId = "";
+          let maxVisibility = 0;
+
+          sections.forEach((section) => {
+            const rect = section.getBoundingClientRect();
+            const height = window.innerHeight;
+
+            // Calculate how much of the section is visible
+            const visibleHeight =
+              Math.min(rect.bottom, height) - Math.max(rect.top, 0);
+            const visibilityRatio = visibleHeight / section.offsetHeight;
+
+            if (visibilityRatio > maxVisibility && visibilityRatio > 0.1) {
+              maxVisibility = visibilityRatio;
+              currentSectionId = section.id;
+            }
+          });
+
+          // Update active class on navigation links
+          if (currentSectionId) {
+            navLinks.forEach((link) => {
+              link.classList.remove("active");
+              if (link.getAttribute("href") === `#${currentSectionId}`) {
+                link.classList.add("active");
+              }
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
